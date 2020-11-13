@@ -3,7 +3,7 @@
 <img src="https://user-images.githubusercontent.com/55251721/99120042-f942cb80-25d8-11eb-9c3e-6cb09ad89127.png" />
 
 <h2 align="center">
-  <img src="https://user-images.githubusercontent.com/55251721/99119842-ab2dc800-25d8-11eb-909a-03b667786b2d.png" height=550 />
+  <img src="https://user-images.githubusercontent.com/55251721/99119842-ab2dc800-25d8-11eb-909a-03b667786b2d.png" />
 </h2>
    
 #### Dependências

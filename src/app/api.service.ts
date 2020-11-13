@@ -3,9 +3,7 @@ import { HttpClient } from '@angular/common/http';
 
 interface Repo {
   name: string;
-  owner: {
-    login: string;
-  };
+  description: string;
 }
 
 @Injectable({
@@ -14,9 +12,9 @@ interface Repo {
 export class APIService {
   constructor(private http: HttpClient) {}
 
-  getRepos() {
+  getRepos(profile: string) {
     const response = this.http
-      .get<Repo[]>('https://api.github.com/users/rafaelnrabelo/repos')
+      .get<Repo[]>(`https://api.github.com/users/${profile}/repos`)
       .pipe();
     return response;
   }

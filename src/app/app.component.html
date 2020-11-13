@@ -1,17 +1,54 @@
 <style>
+  input {
+    height: 40px;
+    width: 250px;
+    border-radius: 5px;
+    border: 0;
+    background-color: rgba(0, 0, 0, 0.15);
+    margin-right: 10px;
+    padding-left: 5px;
+    font-size: 15px;
+  }
+  input::placeholder {
+    color: rgba(0, 0, 0, 0.6);
+  }
+  button {
+    border: 0;
+    background-color: rgba(0, 0, 0, 0.15);
+    height: 40px;
+    width: 65px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.25s;
+    font-size: 15px;
+  }
+  button:hover {
+    background-color: rgba(0, 0, 0, 0.25);
+  }
   div {
     display: flex;
-    align-items: center;
-  }
-  h1 {
-    margin-right: 10px;
+    flex-direction: column;
   }
   p {
+    font-size: 22px;
+    font-weight: bold;
+  }
+  span {
     font-size: 18px;
   }
 </style>
 
+<form [formGroup]="searchForm" (ngSubmit)="onSubmit(searchForm.value)">
+  <input
+    id="profile"
+    formControlName="profile"
+    type="text"
+    placeholder="Digite seu login do GitHub"
+  />
+
+  <button class="button" type="submit">Buscar</button>
+</form>
 <div *ngFor="let repo of repos | async">
-  <h1>{{ repo.name }}</h1>
-  <p>{{ repo.owner.login }}</p>
+  <p>{{ repo.name }}</p>
+  <span>{{ repo.description }}</span>
 </div>

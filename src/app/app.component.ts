@@ -1,13 +1,16 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
+import { FormBuilder, FormGroup } from '@angular/forms';
 
 import { APIService } from './api.service';
 
 interface Repo {
   name: string;
-  owner: {
-    login: string;
-  };
+  description: string;
+}
+
+interface SearchData {
+  profile: string;
 }
 
 @Component({
@@ -15,12 +18,17 @@ interface Repo {
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
 })
-export class AppComponent implements OnInit {
+export class AppComponent {
   repos: Observable<Repo[]> | undefined;
+  searchForm: FormGroup;
 
-  constructor(private api: APIService) {}
+  constructor(private api: APIService, private formBuilder: FormBuilder) {
+    this.searchForm = this.formBuilder.group({
+      profile: '',
+    });
+  }
 
-  async ngOnInit() {
-    this.repos = this.api.getRepos();
+  onSubmit(searchData: SearchData) {
+    this.repos = this.api.getRepos(searchData.profile);
   }
 }

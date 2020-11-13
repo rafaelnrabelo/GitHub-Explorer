@@ -1,0 +1,46 @@
+<img src="../../assets/logo.svg" alt="GitHub Explorer" />
+<h1 class="Title">Explore repositórios no GitHub.</h1>
+
+<form
+  [formGroup]="searchForm"
+  class="Form"
+  (ngSubmit)="onSubmit(searchForm.value)"
+>
+  <input
+    id="profile"
+    formControlName="repositoryName"
+    type="text"
+    placeholder="Digite o nome do seu repositório"
+    class="Input"
+  />
+
+  <button type="submit" class="Button">Pesquisar</button>
+</form>
+
+<div *ngIf="inputError" class="InputError">
+  {{ inputError }}
+</div>
+
+<div class="Repositories">
+  <a
+    id="{{ repo.id }}"
+    class="Repository"
+    *ngFor="let repo of repos"
+    [routerLink]="['/repository', repo.full_name]"
+  >
+    <img
+      class="Repository-Image"
+      src="{{ repo.owner.avatar_url }}"
+      alt="{{ repo.owner.login }}"
+    />
+    <div class="Repository-TextDiv">
+      <strong class="Repository-Name">{{ repo.full_name }}</strong>
+      <p class="Repository-Description">{{ repo.description }}</p>
+    </div>
+    <img
+      class="Repository-Arrow"
+      src="../../assets/ArrowRight.svg"
+      alt="ArrowRight"
+    />
+  </a>
+</div>

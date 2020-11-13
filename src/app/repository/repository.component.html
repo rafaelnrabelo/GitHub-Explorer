@@ -1,0 +1,55 @@
+<header class="Header">
+  <img src="../../assets/logo.svg" alt="GitHub Explorer" />
+  <a [routerLink]="['']" class="Back-Button">
+    <img class="Back-Arrow" src="../../assets/ArrowLeft.svg" alt="ArrowLeft" />
+    Voltar
+  </a>
+</header>
+
+<div class="Repository">
+  <div class="Repository-Info">
+    <img
+      class="Repository-Image"
+      src="{{ repo.owner.avatar_url }}"
+      alt="{{ repo.owner.login }}"
+    />
+    <div class="Repository-TextDiv">
+      <strong class="Repository-Name">{{ repo.full_name }}</strong>
+      <p class="Repository-Description">{{ repo.description }}</p>
+    </div>
+  </div>
+  <ul class="Repository-Stats">
+    <li class="Stat-Section">
+      <strong>1808</strong>
+      <span>Stars</span>
+    </li>
+    <li class="Stat-Section">
+      <strong>48</strong>
+      <span>Forks</span>
+    </li>
+    <li class="Stat-Section">
+      <strong>67</strong>
+      <span>Issues abertas</span>
+    </li>
+  </ul>
+</div>
+
+<div class="Issues">
+  <a
+    href="{{ issue.html_url }}"
+    target="_blank"
+    id="{{ issue.id }}"
+    *ngFor="let issue of issues"
+    class="Issue"
+  >
+    <div class="Issue-TextDiv">
+      <strong class="Issue-Title">{{ issue.title }}</strong>
+      <p class="Issue-Username">{{ issue.user.login }}</p>
+    </div>
+    <img
+      class="Issue-Arrow"
+      src="../../assets/ArrowRight.svg"
+      alt="ArrowRight"
+    />
+  </a>
+</div>

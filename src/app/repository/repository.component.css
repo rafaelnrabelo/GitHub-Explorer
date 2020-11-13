@@ -1,0 +1,138 @@
+.Header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.Back-Button {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  color: #a8a8b3;
+  text-decoration: none;
+  transition: color 0.25s;
+}
+
+.Back-Button:hover {
+  color: #3d3d4d;
+}
+
+.Back-Button:hover .Back-Arrow {
+  filter: invert(21%) sepia(16%) saturate(615%) hue-rotate(202deg)
+    brightness(99%) contrast(91%);
+}
+
+.Back-Arrow {
+  margin-left: 5px;
+  filter: invert(93%) sepia(7%) saturate(269%) hue-rotate(202deg)
+    brightness(86%) contrast(95%);
+  transition: filter 0.25s;
+}
+
+.Repository {
+  margin-top: 50px;
+}
+
+.Repository-Info {
+  display: flex;
+  align-items: center;
+}
+
+.Repository-Image {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+}
+
+.Repository-TextDiv {
+  margin-left: 24px;
+}
+
+.Repository-Name {
+  font-size: 36px;
+  color: #3d3d4d;
+}
+
+.Repository-Description {
+  font-size: 18px;
+  color: #737380;
+  margin-top: 4px;
+}
+
+.Repository-Stats {
+  display: flex;
+  list-style: none;
+  margin-top: 40px;
+}
+
+.Stat-Section + .Stat-Section {
+  margin-left: 80px;
+}
+
+.Stat-Section strong {
+  display: block;
+  font-size: 36px;
+  color: #3d3d4d;
+}
+
+.Stat-Section span {
+  display: block;
+  font-size: 18px;
+  color: #6c6c80;
+  margin-top: 4px;
+}
+
+.Issues {
+  margin-top: 40px;
+}
+
+.Issue {
+  background-color: #fff;
+  border-radius: 5px;
+  width: 100%;
+  padding: 24px;
+  display: block;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.Issue + .Issue {
+  margin-top: 16px;
+}
+
+.Issue:hover {
+  transform: translateX(10px);
+}
+
+.Issue:hover .Issue-Arrow {
+  filter: invert(21%) sepia(16%) saturate(615%) hue-rotate(202deg)
+    brightness(99%) contrast(91%);
+}
+
+.Issue-TextDiv {
+  margin: 0 16px;
+  flex: 1;
+}
+
+.Issue-Title {
+  font-size: 20px;
+  color: #3d3d4d;
+}
+
+.Issue-Username {
+  font-size: 18px;
+  color: #a8a8b3;
+  margin-top: 4px;
+}
+
+.Issue-Arrow {
+  width: 25px;
+  height: 25px;
+  margin-left: auto;
+  filter: invert(93%) sepia(7%) saturate(269%) hue-rotate(202deg)
+    brightness(86%) contrast(95%);
+  transition: filter 0.2s;
+}
